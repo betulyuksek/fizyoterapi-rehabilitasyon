@@ -1,0 +1,610 @@
+:root {
+  --bg: #FAF9F6;
+  --surface: #FFFFFF;
+  --surface-soft: #EEF4F3;
+  --text: #1E293B;
+  --text-muted: #475569;
+  --primary: #0F6E6E;
+  --primary-dark: #0A4E4E;
+  --accent: #D96B43;
+  --border: #E2E8F0;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  --container: 1140px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Üst Menü */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 249, 246, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #FFFFFF;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 1.1rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Hero & Başlıklar */
+.hero {
+  padding: 68px 0 52px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: var(--surface-soft);
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+h1,
+h1.page-title {
+  font-size: clamp(2rem, 3.8vw, 2.9rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin-bottom: 28px;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.hero-card {
+  background: linear-gradient(160deg, var(--surface-soft) 0%, #FFFFFF 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+
+.card-intro {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.hero-pillars {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.hero-pillars li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.hero-pillars span {
+  display: block;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+/* Bölümler */
+section {
+  padding: 64px 0;
+}
+
+.soft-band {
+  background: var(--surface-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+  max-width: 68ch;
+  margin-bottom: 32px;
+}
+
+.section-tag {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.info-box h3 {
+  font-size: 1.12rem;
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+}
+
+.info-box p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Eğitim Adımları */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.step-num {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--surface-soft);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+}
+
+.step-card h3 {
+  font-size: 1.12rem;
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Çalışma Alanları Grupları */
+
+.area-group:last-child {
+  margin-bottom: 0;
+}
+
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.area-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.area-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.area-card.hidden {
+  display: none;
+}
+
+.area-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.area-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* SSS / Accordion */
+.faq-list {
+  max-width: 820px;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 18px 22px;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  color: var(--primary);
+}
+
+.faq-icon {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 22px 18px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  background: #132226;
+  color: #E2E8F0;
+  padding: 44px 0 30px;
+  margin-top: 24px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 22px;
+}
+
+.footer-top h3 {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.footer-top p {
+  color: #CBD5E1;
+  font-size: 0.92rem;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid,
+  .two-col,
+  .steps-grid,
+  .area-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 24px;
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+/* Görsel Kutuları — Resme Tam Oturan ve Arka Kutu Görünmeyen Yapı */
+.media-box {
+  background: transparent;
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: none;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  height: auto;
+}
+
+.media-box img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 420px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.media-hero {
+  margin-bottom: 18px;
+}
+
+.media-banner {
+  margin-bottom: 28px;
+}
+
+.media-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.media-box figcaption {
+  padding: 10px 4px 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  background: transparent;
+  border-top: none;
+}
+
+/* Alanlar Sayfası Üst Düzeni: Solda Metin, Sağda 2-3 Görsel */
+.alanlar-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+.alanlar-intro {
+  margin-bottom: 0;
+}
+
+.alanlar-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  justify-items: center;
+}
+
+.alanlar-gallery .media-box {
+  margin-inline: auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.alanlar-gallery .media-box img {
+  max-height: 190px;
+}
+
+.alanlar-gallery .media-box:nth-child(3):last-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .alanlar-top {
+    grid-template-columns: 1fr;
+  }
+
+  .media-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .media-box img {
+    max-height: 360px;
+  }
+
+  .alanlar-gallery .media-box img {
+    max-height: 220px;
+  }
+}
